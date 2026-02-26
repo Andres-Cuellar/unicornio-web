@@ -1,3 +1,7 @@
+---
+import { number } from "../services.tsx";
+---
+
 <footer class="relative overflow-hidden bg-background-dark py-20">
     <!-- Gold particle dust effect (simulated with bg image) -->
     <div
@@ -16,7 +20,8 @@
         </p>
         <a
             class="inline-flex h-16 animate-bounce items-center justify-center gap-3 rounded-full bg-primary px-10 text-lg font-bold text-black shadow-[0_0_40px_rgba(212,175,55,0.5)] transition-transform hover:scale-105"
-            href="#"
+            href={`https://wa.me/${number}`}
+            target="_blank"
         >
             <span class="material-symbols-outlined text-3xl">chat</span>
             HABLA CON EL BRUJO MAYOR

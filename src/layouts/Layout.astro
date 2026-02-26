@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import { Whatsapp } from "simple-icons-astro";
+import { number } from "../services.tsx";
 ---
 
 <!doctype html>
@@ -23,13 +25,20 @@ import "../styles/global.css";
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
 			rel="stylesheet"
 		/>
-		<title>Astro Basics</title>
+		<title>Brujo Mayor de Catemaco</title>
 	</head>
 
 	<body
 		class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-body overflow-x-hidden selection:bg-primary selection:text-black"
 	>
 		<slot />
+		<a
+			class="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl transition-transform hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.6)]"
+			href={`https://wa.me/${number}`}
+			target="_blank"
+		>
+			<Whatsapp />
+		</a>
 	</body>
 </html>
 
