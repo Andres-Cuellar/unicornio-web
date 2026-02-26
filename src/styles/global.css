@@ -20,3 +20,25 @@
   --background-image-gold-gradient: linear-gradient(45deg, #d4af37, #f2d06b, #d4af37);
 }
 
+html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.gold-glow {
+		box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+	}
+
+	.purple-glow {
+		box-shadow: 0 0 20px rgba(48, 25, 52, 0.6);
+	}
+
+	.text-gold {
+		color: #d4af37;
+	}
+
+	.border-gold {
+		border-color: #d4af37;
+	}
