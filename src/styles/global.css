@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #d4af37;
+  --color-primary-dark: #b5952f;
+  --color-secondary: #301934;
+  --color-background-light: #f7f6f8;
+  --color-background-dark: #0f0c13;
+  --color-card-dark: #1a1621;
+  --color-border-gold: #d4af37;
+
+  /* Fonts */
+  --font-display: "Cinzel", serif;
+  --font-serif: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Background Images/Gradients */
+  --background-image-mystical-gradient: linear-gradient(to bottom right, #0f0c13, #1a1621);
+  --background-image-gold-gradient: linear-gradient(45deg, #d4af37, #f2d06b, #d4af37);
+}
+

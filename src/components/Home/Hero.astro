@@ -1,0 +1,66 @@
+---
+import { number } from "../../services.tsx";
+---
+
+<section
+  class="relative flex min-h-[650px] items-center justify-center overflow-hidden"
+>
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img
+      alt="Sorcerer silhouette in mystical candlelight smoke"
+      class="h-full w-full object-cover opacity-60"
+      data-alt="Sorcerer silhouette in mystical candlelight smoke"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFP-UcYZgcSh0mpRWIr-leg-ATB-aO2_RLTlaL3sWLGqc8cGtFC2VW5ySsltGIeR6i3rC2lH_ysoq9NyF3JyuGBcumhGLRVVCdHrC_sHUe5F4fO5MsJ9LMS8LGgKz6st2xVigHqc3AkFZvY_FAt4CTSlCY79RtrXGt1deOSfyEbI2tzB4XkrLMMi8SPIc3CGrCtSFiaU97sl35hEiEgfX4k2nUaVSSe4DP6R9YwfrvL1EIh7Z_JNsgW61ROoLPfMHtFMIREreoQ0Y"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-gradient-to-r from-background-dark via-transparent to-background-dark"
+    >
+    </div>
+  </div>
+  <div class="relative z-10 mx-auto max-w-5xl px-4 text-center">
+    <div
+      class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-black/40 px-4 py-1 backdrop-blur-sm"
+    >
+      <span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+      <span class="text-xs font-medium uppercase tracking-widest text-primary"
+        >Alta Magia de Catemaco</span
+      >
+    </div>
+    <h1
+      class="mb-6 font-display text-4xl font-black leading-tight text-white sm:text-6xl lg:text-7xl"
+    >
+      Brujo Mayor de <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] to-[#F2D06B]"
+        >Catemaco</span
+      >
+    </h1>
+    <p
+      class="mx-auto mb-10 max-w-2xl font-serif text-lg text-slate-300 sm:text-xl md:leading-relaxed"
+    >
+      Resultados Reales en Amor, Dinero y Protección Espiritual. Alta magia y
+      rituales ancestrales para transformar tu destino hoy mismo.
+    </p>
+    <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <a
+        class="group relative flex h-14 min-w-[280px] items-center justify-center overflow-hidden rounded-full bg-primary px-8 text-base font-bold text-black shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.6)]"
+        href={`https://wa.me/${number}`}
+        target="_blank"
+      >
+        <span class="relative z-10 flex items-center gap-2">
+          CONSULTA POR WHATSAPP
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </span>
+      </a>
+      <a
+        class="flex h-14 items-center justify-center rounded-full border border-slate-600 bg-transparent px-8 text-base font-medium text-white transition-colors hover:border-primary hover:text-primary"
+      >
+        Conocer Servicios
+      </a>
+    </div>
+  </div>
+</section>

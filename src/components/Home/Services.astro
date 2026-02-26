@@ -1,0 +1,189 @@
+---
+import { number } from "../../services.tsx";
+
+const waUrl = (msg: string) =>
+  `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
+
+const links = {
+  amarres:    waUrl("Hola, me interesa saber más sobre los Amarres de Amor."),
+  endulza:    waUrl("Hola, me interesa saber más sobre los Endulzamientos."),
+  limpias:    waUrl("Hola, me interesa saber más sobre las Limpias Espirituales."),
+  dinero:     waUrl("Hola, me interesa saber más sobre el servicio Abre Caminos para Dinero y Abundancia."),
+  proteccion: waUrl("Hola, me interesa saber más sobre la Protección Suprema."),
+  santaMuerte:waUrl("Hola, me interesa saber más sobre los Servicios de Santa Muerte."),
+};
+---
+
+<section class="py-20 bg-[#141118]" id="servicios">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-16 text-center">
+      <span
+        class="mb-2 block font-display text-sm font-bold uppercase tracking-widest text-primary"
+        >Artes Sagradas</span
+      >
+      <h2 class="font-display text-3xl font-bold text-white sm:text-5xl">
+        Nuestros Servicios
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-slate-400">
+        Intervenciones espirituales poderosas para cada aspecto de tu existencia
+        terrenal.
+      </p>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Service Card 1 -->
+      <div
+        class="group relative flex flex-col overflow-hidden rounded-xl border border-[#302839] bg-card-dark p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+      >
+        <div
+          class="mb-4 self-start rounded-full bg-primary/10 p-3 text-primary"
+        >
+          <span class="material-symbols-outlined text-3xl">favorite</span>
+        </div>
+        <h3 class="mb-2 font-display text-xl font-bold text-white">
+          Amarres de Amor
+        </h3>
+        <p class="text-sm text-slate-400">
+          Recupera a tu pareja, aviva la llama de la pasión y asegura la
+          fidelidad eterna mediante ataduras poderosas.
+        </p>
+        <a
+          class="mt-auto pt-4 flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-white transition-colors w-fit"
+          href={links.amarres}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Consultar <span class="material-symbols-outlined text-base leading-none">arrow_forward</span>
+        </a>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100 pointer-events-none"
+        >
+        </div>
+      </div>
+      <!-- Service Card 2 -->
+      <div
+        class="group relative flex flex-col overflow-hidden rounded-xl border border-[#302839] bg-card-dark p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+      >
+        <div
+          class="mb-4 self-start rounded-full bg-primary/10 p-3 text-primary"
+        >
+          <span class="material-symbols-outlined text-3xl">hive</span>
+        </div>
+        <h3 class="mb-2 font-display text-xl font-bold text-white">
+          Endulzamientos
+        </h3>
+        <p class="text-sm text-slate-400">
+          Suaviza el carácter de esa persona difícil, elimina rencores y atrae
+          la dulzura a tu relación.
+        </p>
+        <a
+          class="mt-auto pt-4 flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-white transition-colors w-fit"
+          href={links.endulza}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Consultar <span class="material-symbols-outlined text-base leading-none">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service Card 3 -->
+      <div
+        class="group relative flex flex-col overflow-hidden rounded-xl border border-[#302839] bg-card-dark p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+      >
+        <div
+          class="mb-4 self-start rounded-full bg-primary/10 p-3 text-primary"
+        >
+          <span class="material-symbols-outlined text-3xl">water_drop</span>
+        </div>
+        <h3 class="mb-2 font-display text-xl font-bold text-white">
+          Limpias Espirituales
+        </h3>
+        <p class="text-sm text-slate-400">
+          Elimina maldiciones, salaciones y energías negativas que bloquean tu
+          progreso y felicidad.
+        </p>
+        <a
+          class="mt-auto pt-4 flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-white transition-colors w-fit"
+          href={links.limpias}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Consultar <span class="material-symbols-outlined text-base leading-none">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service Card 4 -->
+      <div
+        class="group relative flex flex-col overflow-hidden rounded-xl border border-[#302839] bg-card-dark p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+      >
+        <div
+          class="mb-4 self-start rounded-full bg-primary/10 p-3 text-primary"
+        >
+          <span class="material-symbols-outlined text-3xl">payments</span>
+        </div>
+        <h3 class="mb-2 font-display text-xl font-bold text-white">
+          Abre Caminos (Dinero)
+        </h3>
+        <p class="text-sm text-slate-400">
+          Atrae abundancia, éxito en los negocios y golpes de suerte. Desbloquea
+          tu flujo financiero.
+        </p>
+        <a
+          class="mt-auto pt-4 flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-white transition-colors w-fit"
+          href={links.dinero}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Consultar <span class="material-symbols-outlined text-base leading-none">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service Card 5 -->
+      <div
+        class="group relative flex flex-col overflow-hidden rounded-xl border border-[#302839] bg-card-dark p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+      >
+        <div
+          class="mb-4 self-start rounded-full bg-primary/10 p-3 text-primary"
+        >
+          <span class="material-symbols-outlined text-3xl">shield</span>
+        </div>
+        <h3 class="mb-2 font-display text-xl font-bold text-white">
+          Protección Suprema
+        </h3>
+        <p class="text-sm text-slate-400">
+          Escudos impenetrables contra envidias, mal de ojo y brujería negra
+          enviada por enemigos.
+        </p>
+        <a
+          class="mt-auto pt-4 flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-white transition-colors w-fit"
+          href={links.proteccion}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Consultar <span class="material-symbols-outlined text-base leading-none">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Service Card 6 -->
+      <div
+        class="group relative flex flex-col overflow-hidden rounded-xl border border-[#302839] bg-card-dark p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]"
+      >
+        <div
+          class="mb-4 self-start rounded-full bg-primary/10 p-3 text-primary"
+        >
+          <span class="material-symbols-outlined text-3xl">skull</span>
+        </div>
+        <h3 class="mb-2 font-display text-xl font-bold text-white">
+          Santa Muerte
+        </h3>
+        <p class="text-sm text-slate-400">
+          Pactos de respeto, devoción y favores especiales para casos imposibles
+          y desesperados.
+        </p>
+        <a
+          class="mt-auto pt-4 flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-white transition-colors w-fit"
+          href={links.santaMuerte}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Consultar <span class="material-symbols-outlined text-base leading-none">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

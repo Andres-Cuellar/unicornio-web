@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #7f13ec;
+  --color-secondary: #d4af37;
+  --color-background-light: #f7f6f8;
+  --color-background-dark: #141118;
+  --color-surface-dark: #1e1823;
+
+  --font-display: "Noto Serif", serif;
+  --font-body: "Noto Sans", sans-serif;
+
+  --background-image-mystic-gradient: linear-gradient(135deg, #141118 0%, #2a1f3d 100%);
+  --background-image-gold-gradient: linear-gradient(45deg, #d4af37, #f3e5ab, #d4af37);
+}
