@@ -1,7 +1,7 @@
 ---
 import logo from "../assets/logo-unicornio-negro.png";
-import { Whatsapp } from "simple-icons-astro";
-import { number } from "../services.tsx";
+import { Whatsapp, Facebook, Instagram } from "simple-icons-astro";
+import { number, facebook, instagram } from "../services.tsx";
 ---
 
 <header
@@ -11,11 +11,13 @@ import { number } from "../services.tsx";
     class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
   >
     <div class="flex items-center gap-3">
-      <img
-        src={logo.src}
-        alt="Logo del Brujo Mayor de Catemaco"
-        class="h-12 w-auto"
-      />
+      <a href="/">
+        <img
+          src={logo.src}
+          alt="Logo del Brujo Mayor de Catemaco"
+          class="h-12 w-auto"
+        />
+      </a>
     </div>
     <nav class="hidden md:flex items-center gap-8">
       <a
@@ -30,8 +32,28 @@ import { number } from "../services.tsx";
         class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
         href="#testimonios">Testimonios</a
       >
+      <a
+        class="text-sm font-medium text-slate-300 hover:text-primary transition-colors"
+        href="/contacto">Contacto</a
+      >
     </nav>
     <div class="flex items-center gap-4">
+      <a
+        class="text-slate-400 hover:text-[#1877F2] transition-colors"
+        href={facebook}
+        target="_blank"
+        aria-label="Facebook"
+      >
+        <Facebook size={20} />
+      </a>
+      <a
+        class="text-slate-400 hover:text-[#E1306C] transition-colors"
+        href={instagram}
+        target="_blank"
+        aria-label="Instagram"
+      >
+        <Instagram size={20} />
+      </a>
       <a
         class="flex items-center gap-2 rounded-full border border-primary bg-primary/10 px-5 py-2 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-black"
         href={`https://wa.me/${number}`}

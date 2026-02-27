@@ -1,5 +1,6 @@
 ---
-import { number } from "../services.tsx";
+import { Facebook, Instagram } from "simple-icons-astro";
+import { number, facebook, instagram } from "../services.tsx";
 ---
 
 <footer class="relative overflow-hidden bg-background-dark py-20">
@@ -26,8 +27,26 @@ import { number } from "../services.tsx";
             <span class="material-symbols-outlined text-3xl">chat</span>
             HABLA CON EL BRUJO MAYOR
         </a>
+        <div class="mt-10 flex justify-center gap-6">
+            <a
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-[#302839] text-slate-400 transition-all hover:border-[#1877F2] hover:text-[#1877F2]"
+                href={facebook}
+                target="_blank"
+                aria-label="Facebook"
+            >
+                <Facebook size={18} />
+            </a>
+            <a
+                class="flex h-10 w-10 items-center justify-center rounded-full border border-[#302839] text-slate-400 transition-all hover:border-[#E1306C] hover:text-[#E1306C]"
+                href={instagram}
+                target="_blank"
+                aria-label="Instagram"
+            >
+                <Instagram size={18} />
+            </a>
+        </div>
         <div
-            class="mt-12 flex justify-center gap-8 border-t border-[#302839] pt-8 text-sm text-slate-500"
+            class="mt-8 flex justify-center gap-8 border-t border-[#302839] pt-8 text-sm text-slate-500"
         >
             <a class="hover:text-primary" href="#">Términos y Condiciones</a>
             <a class="hover:text-primary" href="#">Política de Privacidad</a>

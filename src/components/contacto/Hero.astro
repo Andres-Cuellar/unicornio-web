@@ -1,69 +1,68 @@
 ---
+import { number } from "../../services.tsx";
 import image2 from "../../assets/img/T4BFGWC35BGIXGUIUM7EI26WM4.jpg";
 ---
 
 <section
-    class="relative flex min-h-[600px] flex-col items-center justify-center overflow-hidden py-20 text-center"
+  class="relative flex min-h-[600px] flex-col items-center justify-center overflow-hidden py-20 text-center"
 >
-    <!-- Background Image with Overlay -->
-    <div class="absolute inset-0 z-0">
-        <div
-            class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent z-10"
-        >
-        </div>
-        <div class="absolute inset-0 bg-primary/20 mix-blend-overlay z-10">
-        </div>
-        <div
-            class="h-full w-full bg-cover bg-center bg-no-repeat opacity-60"
-            data-alt="Mystical altar with candles, tarot cards, and purple smoke"
-            style={image2.src}
-        >
-        </div>
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/80 to-transparent z-10"
+    >
     </div>
-    <div class="relative z-20 mx-auto max-w-4xl px-4">
-        <div class="mb-6 flex justify-center">
-            <span
-                class="inline-flex items-center rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary backdrop-blur-sm"
-            >
-                <span
-                    class="mr-1 h-1.5 w-1.5 rounded-full bg-secondary animate-pulse"
-                ></span>
-                Alta Magia y Esoterismo
-            </span>
-        </div>
-        <h1
-            class="mb-6 text-5xl font-black leading-tight tracking-tight text-white md:text-7xl lg:text-8xl drop-shadow-lg"
-        >
-            Consulta al <br />
-            <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-amber-200 to-secondary"
-                >Brujo Mayor</span
-            >
-        </h1>
-        <p
-            class="mb-10 text-lg font-light leading-relaxed text-slate-300 md:text-xl lg:max-w-2xl lg:mx-auto"
-        >
-            Descubre los secretos de tu destino a través de rituales
-            ancestrales. Rompe ataduras, abre caminos y manifiesta tus deseos
-            más profundos.
-        </p>
-        <div
-            class="flex flex-col items-center justify-center gap-4 sm:flex-row"
-        >
-            <button
-                class="group relative flex h-14 min-w-[200px] items-center justify-center overflow-hidden rounded-full bg-primary px-8 text-base font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-primary/50"
-            >
-                <span class="mr-2">Agendar Consulta</span>
-                <span
-                    class="material-symbols-outlined transition-transform group-hover:translate-x-1"
-                    >arrow_forward</span
-                >
-            </button>
-            <button
-                class="flex h-14 min-w-[200px] items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 text-base font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40"
-            >
-                Ver Servicios
-            </button>
-        </div>
+    <div class="absolute inset-0 bg-primary/20 mix-blend-overlay z-10"></div>
+    <div
+      class="h-full w-full bg-cover bg-center bg-no-repeat opacity-60"
+      data-alt="Mystical altar with candles, tarot cards, and purple smoke"
+      style={`background-image: url(${image2.src})`}
+    >
     </div>
+  </div>
+  <div class="relative z-20 mx-auto max-w-4xl px-4">
+    <div class="mb-6 flex justify-center">
+      <span
+        class="inline-flex items-center rounded-full border border-secondary/30 bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary backdrop-blur-sm"
+      >
+        <span class="mr-1 h-1.5 w-1.5 rounded-full bg-secondary animate-pulse"
+        ></span>
+        Alta Magia y Esoterismo
+      </span>
+    </div>
+    <h1
+      class="mb-6 text-5xl font-black leading-tight tracking-tight text-white md:text-7xl lg:text-8xl drop-shadow-lg"
+    >
+      Consulta al <br />
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-amber-200 to-secondary"
+        >Brujo Mayor</span
+      >
+    </h1>
+    <p
+      class="mb-10 text-lg font-light leading-relaxed text-slate-300 md:text-xl lg:max-w-2xl lg:mx-auto"
+    >
+      Descubre los secretos de tu destino a través de rituales ancestrales.
+      Rompe ataduras, abre caminos y manifiesta tus deseos más profundos.
+    </p>
+    <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <a
+        class="group relative flex h-14 min-w-[200px] items-center justify-center overflow-hidden rounded-full bg-primary px-8 text-base font-bold text-white shadow-lg transition-all hover:scale-105 hover:shadow-primary/50"
+        href={`https://wa.me/${number}?text=Hola%20quiero%20agendar%20una%20consulta%20con%20el%20Brujo%20Mayor`}
+        target="_blank"
+      >
+        <span class="mr-2">Agendar Consulta</span>
+        <span
+          class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+          >arrow_forward</span
+        >
+      </a>
+      <a
+        class="flex h-14 min-w-[200px] items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 text-base font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40"
+        href="#servicios"
+      >
+        Ver Servicios
+      </a>
+    </div>
+  </div>
 </section>
