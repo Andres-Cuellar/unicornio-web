@@ -1,0 +1,24 @@
+---
+import { number } from "../services.tsx";
+const mensaje = encodeURIComponent("necesito una consulta con el brujo mayor");
+const waUrl = `https://wa.me/${number}?text=${mensaje}`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contactar por WhatsApp</title>
+    <meta http-equiv="refresh" content={`0;url=${waUrl}`} />
+  </head>
+  <body>
+    <p>
+      Redirigiendo a WhatsApp... Si no eres redirigido automáticamente,
+      <a href={waUrl}>haz clic aquí</a>.
+    </p>
+    <script define:vars={{ waUrl }}>
+      window.location.href = waUrl;
+    </script>
+  </body>
+</html>

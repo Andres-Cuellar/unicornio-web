@@ -1,0 +1,219 @@
+---
+const videos = [
+  {
+    vid: "/vid/testimonio-1.mp4",
+    title: "Oscar F. — Amor de pareja",
+    image: "/img/testimonio-1.webp",
+  },
+  {
+    vid: "/vid/testimonio-2.mp4",
+    title: "Clara R. — Prosperidad",
+    image: "/img/testimonio-2.webp",
+  },
+  {
+    vid: "/vid/testimonio-3.mp4",
+    title: "Juan M. — Prosperidad y Protección",
+    image: "/img/testimonio-3.webp",
+  },
+  {
+    vid: "/vid/testimonio-4.mp4",
+    title: "José P. — Apertura de caminos",
+    image: "/img/testimonio-4.webp",
+  },
+  {
+    vid: "/vid/testimonio-5.mp4",
+    title: "Javier M. — Prosperidad",
+    image: "/img/testimonio-5.webp",
+  },
+];
+---
+
+<section class="bg-background-dark py-20 overflow-hidden" id="testimonios">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+    <div class="mb-10 text-center">
+      <h2 class="font-display text-3xl font-bold text-white">Testimonios Verdadreros</h2>
+      <p class="mt-3 text-sm text-[#cfc6d9]">Historias reales de personas que transformaron su vida.</p>
+    </div>
+
+    <div class="relative" data-tvid-root>
+
+      <!-- Track -->
+      <div class="overflow-hidden" data-tvid-overflow>
+        <div
+          class="flex gap-4 transition-transform duration-500 ease-out will-change-transform"
+          data-tvid-track
+        >
+          {videos.map((item, i) => (
+            <article
+              class="flex-none w-[calc(33.333%-11px)] sm:w-[calc(33.333%-11px)]"
+              data-tvid-card
+            >
+              <!-- Card 9:16 -->
+              <div class="relative w-full overflow-hidden rounded-2xl bg-black shadow-lg border border-[#3a2d45]"
+                   style="aspect-ratio:9/16">
+
+                <!-- Poster (preview) -->
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover transition-opacity duration-300"
+                  data-tvid-poster
+                />
+
+                <!-- Video (lazy) -->
+                <video
+                  class="absolute inset-0 h-full w-full object-cover opacity-0"
+                  data-src={item.vid}
+                  preload="none"
+                  playsinline
+                  data-tvid-video
+                ></video>
+
+                <!-- Overlay play -->
+                <button
+                  type="button"
+                  aria-label={`Reproducir ${item.title}`}
+                  class="absolute inset-0 z-10 flex flex-col items-center justify-end pb-6 bg-gradient-to-t from-black/70 via-transparent to-transparent text-white transition hover:from-black/50"
+                  data-tvid-play
+                >
+                  <span class="mb-2 flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary bg-black/50 text-xl text-primary">▶</span>
+                  <span class="text-xs font-medium text-[#e9edef] px-2 text-center leading-tight">{item.title}</span>
+                </button>
+
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- Prev arrow -->
+      <button
+        type="button"
+        aria-label="Anterior"
+        class="absolute -left-4 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-primary bg-[#1a0f26]/90 text-primary shadow-lg transition hover:bg-[#2d1f3b] disabled:opacity-30"
+        data-tvid-prev
+      >
+        ←
+      </button>
+
+      <!-- Next arrow -->
+      <button
+        type="button"
+        aria-label="Siguiente"
+        class="absolute -right-4 top-1/2 z-20 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-primary bg-[#1a0f26]/90 text-primary shadow-lg transition hover:bg-[#2d1f3b] disabled:opacity-30"
+        data-tvid-next
+      >
+        →
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modal para reproducir en grande -->
+<div
+  id="tvid-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+  data-tvid-modal
+>
+  <div class="relative w-full max-w-sm" style="aspect-ratio:9/16">
+    <video
+      class="h-full w-full rounded-2xl bg-black object-contain shadow-2xl"
+      controls
+      playsinline
+      data-tvid-modal-video
+    ></video>
+    <button
+      type="button"
+      aria-label="Cerrar"
+      class="absolute -top-4 -right-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#3a2d45] bg-[#1a0f26] text-white text-lg shadow-lg hover:bg-[#2d1f3b]"
+      data-tvid-modal-close
+    >✕</button>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    const root       = document.querySelector("[data-tvid-root]");
+    const track      = document.querySelector("[data-tvid-track]");
+    const prevBtn    = document.querySelector("[data-tvid-prev]");
+    const nextBtn    = document.querySelector("[data-tvid-next]");
+    const modal      = document.querySelector("[data-tvid-modal]");
+    const modalVid   = document.querySelector("[data-tvid-modal-video]");
+    const modalClose = document.querySelector("[data-tvid-modal-close]");
+    const cards      = Array.from(document.querySelectorAll("[data-tvid-card]"));
+
+    if (!root || !track || !prevBtn || !nextBtn || !modal || !modalVid || !modalClose) return;
+
+    const visible = 3;
+    const maxIndex = cards.length - visible;
+    let index = 0;
+
+    const cardWidth = () => {
+      const c = cards[0];
+      return c ? c.getBoundingClientRect().width + 16 : 0; // 16 = gap-4
+    };
+
+    const updateArrows = () => {
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index >= maxIndex;
+    };
+
+    const moveTo = (i) => {
+      index = Math.max(0, Math.min(i, maxIndex));
+      track.style.transform = `translateX(-${index * cardWidth()}px)`;
+      updateArrows();
+    };
+
+    const preloadCard = (i) => {
+      const card = cards[i];
+      if (!card) return;
+      const video = card.querySelector("[data-tvid-video]");
+      if (!video || video.src) return;
+      const src = video.dataset.src;
+      if (src) { video.src = src; video.load(); }
+    };
+
+    preloadCard(0);
+    preloadCard(1);
+    preloadCard(2);
+
+    prevBtn.addEventListener("click", () => moveTo(index - 1));
+    nextBtn.addEventListener("click", () => {
+      moveTo(index + 1);
+      preloadCard(index + visible);
+    });
+
+    // Click en play → abrir modal
+    cards.forEach((card) => {
+      const playBtn = card.querySelector("[data-tvid-play]");
+      const video   = card.querySelector("[data-tvid-video]");
+      if (!playBtn || !video) return;
+
+      playBtn.addEventListener("click", () => {
+        const src = video.src || video.dataset.src || "";
+        if (!src) return;
+        modalVid.src = src;
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        modalVid.play().catch(() => {});
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      modalVid.pause();
+      modalVid.src = "";
+    };
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+
+    updateArrows();
+
+    window.addEventListener("resize", () => moveTo(index));
+  })();
+</script>
